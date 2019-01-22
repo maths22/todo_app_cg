@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  web:
+    build: .
+    environment:
+      RAILS_ENV: development
+      VIRTUAL_HOST: todoapp.docker
+    volumes:
+      - ".:/usr/src/app"
+    depends_on:
+      - postgres
+    logging:
+      options:
+        max-file: '5'
+        max-size: 1m
+
+  postgres:
+    image: postgres:10.6
+    environment:
+      POSTGRES_PASSWORD: postgres_password
+    logging:
+      options:
+        max-file: '5'
+        max-size: 1m
