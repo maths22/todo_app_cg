@@ -1,0 +1,23 @@
+app:
+  region: us-west-2
+  environment: dev
+  vpc_cluster: inseng-dev
+  databases:
+    api:
+      allocated_storage: 20
+      db_instance_class: db.t2.small
+      engine_version: '10'
+      env_var_prefix: DB
+      master_username: todoapp_postgres_user
+      storage_type: gp2
+  instance_pools:
+    web:
+      hooks:
+        pre: bundle exec rake db:migrate
+      instance_type: t2.small
+      max_size: 2
+      min_size: 1
+  load_balancers:
+    web:
+      ssl_cert_arn: arn:aws:acm:us-west-2:830473435438:certificate/b119c8b6-9305-4532-9798-dcfbf712158b
+

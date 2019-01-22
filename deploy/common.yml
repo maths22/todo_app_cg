@@ -1,0 +1,17 @@
+cloudgate:
+  required_version: "~> 7.0.0"
+app:
+  name: jburroughs-todoapp
+  users:
+    jburroughs:
+      name: Jacob Burroughs
+      email: jburroughs@instructure.com
+      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCTp4+ZWOodXBZL0eaFE+j1h8KYsOVxDQrZuEgDqIAbqaijwiMLG5reYgVBQjhpO9yPUNqc7AMShRfCubAc0x/kt3phyacRERNcIw/Wsgr9+XFnl8yODPL81ptS/d7he0axMVn0HkrnJwX9aDPaSs1TI2QHtcBjGQeAWnP1ftCaM7iMdXHsDabYdg/QhGRo4BBt7MkQhtAJnePEBuV2NfYQZ8pGyWgowEznaE8k0KsYDNQEg/UEqms4E2UiF+By46G+uRjVUE4SK7+jRcZH59kE6GKtDmi740M/rChGTe2nWny+uvPA3Cl7NP1dhFlOp9aikPiqziZpo0ZKOuCsLB0L jburroughs@jburroughs-l2.corp.instructure.com      
+  env_vars:
+    LEGACY_PORTS: "0"
+    RAILS_ENV: production
+  instance_pools:
+    web:
+      health_check_path: /todos
+      http_port: 8080
+      https_port: 8443
