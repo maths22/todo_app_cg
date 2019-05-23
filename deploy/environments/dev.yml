@@ -20,4 +20,6 @@ app:
   load_balancers:
     web:
       ssl_cert_arn: arn:aws:acm:us-west-2:830473435438:certificate/b119c8b6-9305-4532-9798-dcfbf712158b
+  terraform:
+    dev: {}
 

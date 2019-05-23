@@ -1,5 +1,7 @@
 cloudgate:
-  required_version: "~> 8.0.0"
+  required_version: "~> 8.0.1"
+terraform:
+  required_version: "~> 0.11.11"
 app:
   name: jburroughs-todoapp
   users:
