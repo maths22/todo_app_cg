@@ -1,5 +1,5 @@
 cloudgate:
-  required_version: "~> 12.1.0"
+  required_version: "~> 12.1"
 terraform:
   required_version: "~> 1.0"
 app:
